@@ -56,6 +56,7 @@ public class AuthService {
             AuthResponse response = new AuthResponse();
             response.setAccessToken(token);
             response.setRefreshToken(refreshToken);
+            response.setUser(user);
             return response;
         } catch (Exception e) {
             throw new RuntimeException("Registration failed: " + e.getMessage(), e);
@@ -81,6 +82,7 @@ public class AuthService {
         AuthResponse response = new AuthResponse();
         response.setAccessToken(token);
         response.setRefreshToken(refreshToken);
+        response.setUser(user);
         return response;
     }
 

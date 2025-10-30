@@ -56,6 +56,7 @@ public class SecurityConfig {
                 .antMatchers("/api/care-tasks/**").permitAll()  // Restrict access to users with role USER
                 .antMatchers("/api/tasks/**").permitAll()  // Allow access to task endpoints
                 .antMatchers("/api/health-records/**").permitAll()
+                .antMatchers("/api/admin/**").hasRole("ADMIN")  // Admin endpoints require ADMIN role
                 .anyRequest().authenticated()  // Authenticate any other request
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)  // Add JWT filter

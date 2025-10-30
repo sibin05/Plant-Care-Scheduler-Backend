@@ -21,4 +21,6 @@ public interface CareTaskRepository extends JpaRepository<CareTask, Long> {
 
     @Query("SELECT c FROM CareTask c WHERE c.status = 'PENDING' AND c.scheduledDate < CURRENT_TIMESTAMP")
     List<CareTask> findOverdue();
+    
+    long countByStatus(Status status);
 }
