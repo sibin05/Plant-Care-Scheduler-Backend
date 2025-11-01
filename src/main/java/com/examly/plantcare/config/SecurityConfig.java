@@ -73,7 +73,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowCredentials(true);
-        corsConfig.setAllowedOrigins(List.of("http://localhost:3000", "http://127.0.0.1:5501"));  // Your front-end domains
+        corsConfig.setAllowedOrigins(List.of("https://plant-care-scheduler.vercel.app", "http://127.0.0.1:5501"));  // Your front-end domains
         corsConfig.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));  // Allowed HTTP methods
         corsConfig.setAllowedHeaders(List.of("Authorization", "Content-Type"));  // Allowed headers for authorization and content type
         corsConfig.setExposedHeaders(List.of("Authorization"));  // Expose Authorization header to front-end for subsequent requests
